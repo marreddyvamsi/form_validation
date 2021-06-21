@@ -94,12 +94,13 @@ function App() {
   const countryHandle = (e) => {
     setCountry(e.target.value);
     console.log(e.target.value);
-    const newStates = [];
+    // const newStates = [];
     if (e.target.value === "INDIA") {
-      for (const state in indianStates) {
-        newStates.push(`${state}`);
-      }
-      setStates(newStates);
+      // for (const state in indianStates) {
+      //   newStates.push(`${state}`);
+      // }
+      // setStates(newStates);
+      setStates(Object.keys(indianStates));
     } else {
       setStates([]);
       setDistricts([]);
@@ -139,7 +140,7 @@ function App() {
               value={name}
               onChange={onchangeHandler}
               onBlur={onblurHandler}
-              required="true"
+              required={true}
               // autoComplete="off"
             />
           </label>
@@ -152,7 +153,7 @@ function App() {
               value={number}
               onChange={onchangeHandler}
               onBlur={onblurHandler}
-              required="true"
+              required={true}
               // autoComplete="off"
             />
           </label>
@@ -165,7 +166,7 @@ function App() {
               value={email}
               onChange={onchangeHandler}
               onBlur={onblurHandler}
-              required="true"
+              required={true}
               // autoComplete="off"
             />
           </label>
